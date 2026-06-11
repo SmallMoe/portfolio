@@ -1,0 +1,154 @@
+/* ==========================================================================
+   DESIGN SYSTEM VARIABLES
+   ========================================================================== */
+:root {
+    --bg-main: #0b0f14;         /* Deep dark lab bench background */
+    --bg-surface: #141a21;      /* Slightly lighter slate for content cards */
+    --text-primary: #e6edf3;    /* Bright white for readable text */
+    --text-secondary: #8b949e;  /* Muted grey for sub-labels */
+    --accent: #f0883e;          /* Electrical Amber / Hardware signal color */
+    --accent-dim: rgba(240, 136, 62, 0.1);
+    --border: #21262d;          /* Sharp technical grids */
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+}
+
+/* ==========================================================================
+   GLOBAL BASE STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    line-height: 1.6;
+    padding: 3rem 1.5rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Header/Terminal Indicator */
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #238636; /* Glowing Green status */
+    border-radius: 50%;
+    margin-right: 6px;
+    box-shadow: 0 0 8px #238636;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & UTILITIES
+   ========================================================================== */
+h1 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+/* Adds a sleek console cursor effect before your name */
+h1::before {
+    content: "$ ";
+    color: var(--accent);
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.highlight-box {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem;
+    border-radius: 4px;
+    margin: 2rem 0;
+}
+
+/* ==========================================================================
+   LINKS & BUTTONS
+   ========================================================================== */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    background-color: var(--accent-dim);
+    text-decoration: underline;
+}
+
+/* Navigation button styling */
+.nav-btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--bg-main) !important;
+    font-weight: bold;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.nav-btn:hover {
+    background-color: #ff9e59;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border);
+}
+
+/* ==========================================================================
+   IMAGES & CARDS (Project Page)
+   ========================================================================== */
+.project-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.img-container {
+    max-width: 100%;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
